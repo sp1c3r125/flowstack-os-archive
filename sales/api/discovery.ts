@@ -132,7 +132,7 @@ function matchKw(text: string, kws: string[]) {
   return kws.some((k) => text.includes(norm(k)));
 }
 
-function inferTemplates(journey: string, pain: string, tools: string): string[] {
+export function inferTemplates(journey: string, pain: string, tools: string): string[] {
   const needed = new Set<string>(["lead_intake_crm"]);
   const all = norm(journey + " " + pain + " " + tools);
   const pn = norm(pain);
@@ -317,7 +317,7 @@ async function resolveDiscoveryInputs(body: Record<string, unknown>) {
   };
 }
 
-function buildConceptDoc(opts: {
+export function buildConceptDoc(opts: {
   tenantId: string;
   journey: string;
   pain: string;
