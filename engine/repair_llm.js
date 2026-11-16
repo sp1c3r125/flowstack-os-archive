@@ -1,4 +1,4 @@
-﻿const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
+const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
 
 const LITELLM_URL = process.env.LITELLM_URL || "http://127.0.0.1:4000/chat/completions";
 const LITELLM_KEY = process.env.LITELLM_KEY || "";

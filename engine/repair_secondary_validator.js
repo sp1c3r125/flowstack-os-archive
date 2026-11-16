@@ -1,4 +1,4 @@
-﻿const { findVersionDrift } = require("./repair_observer_version.js");
+const { findVersionDrift } = require("./repair_observer_version.js");
 
 function validateSecondaryRuntime(workflow, repairResult) {
   const versionObs = findVersionDrift(workflow);

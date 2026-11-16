@@ -1,4 +1,4 @@
-﻿function getNodeMap(nodes) {
+function getNodeMap(nodes) {
   const out = {};
   for (const n of Array.isArray(nodes) ? nodes : []) {
     out[n.name] = {

@@ -1,4 +1,4 @@
-﻿function validateRuntime({ workflow, versionObs, execObs, platformObs, testResult }) {
+function validateRuntime({ workflow, versionObs, execObs, platformObs, testResult }) {
   const issues = [];
 
   if (versionObs?.fakeTop?.length > 0) {

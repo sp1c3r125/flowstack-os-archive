@@ -1,4 +1,4 @@
-﻿const ROUTES = [
+const ROUTES = [
   {
     from: "lead_intake_crm",
     to: "missed_call_recovery",

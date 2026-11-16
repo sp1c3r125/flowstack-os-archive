@@ -1,4 +1,4 @@
-﻿function stubOpsForNodes(nodeNames) {
+function stubOpsForNodes(nodeNames) {
   const stubMap = {
     "CRM Upsert": { crmStatus: "upserted_stub", crmRecordId: "crm-demo-001" },
     "Notify Owner": { ownerNotificationStatus: "sent_stub" },

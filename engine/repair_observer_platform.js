@@ -1,4 +1,4 @@
-﻿function summarize(x) {
+function summarize(x) {
   if (!x) return "";
   if (typeof x === "string") return x;
   try { return JSON.stringify(x); } catch { return String(x); }

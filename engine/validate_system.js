@@ -1,4 +1,4 @@
-﻿const { getWorkflow, testWebhook } = require("./flowstack_tools.js");
+const { getWorkflow, testWebhook } = require("./flowstack_tools.js");
 const { findVersionDrift } = require("./repair_observer_version.js");
 
 function fakeNodes(workflow) {

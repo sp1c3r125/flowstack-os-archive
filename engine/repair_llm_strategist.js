@@ -1,4 +1,4 @@
-﻿const { proposeRepair } = require("./repair_llm.js");
+const { proposeRepair } = require("./repair_llm.js");
 
 const NON_LLM_FAILURE_TYPES = new Set([
   "WEBHOOK_NOT_REGISTERED",

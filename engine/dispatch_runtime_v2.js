@@ -1,4 +1,4 @@
-﻿const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
+const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
 const { getRoutes } = require("./route_system_events.js");
 const { appendEvent } = require("./event_ledger.js");
 const { validateDispatchPayload } = require("./validate_dispatch_payloads.js");

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Flowstack Security Test Suite (Critical Issues Only)
  * Tests: Injection attacks, data leaks, auth bypass attempts
  * No external dependencies (no Airtable, no n8n, no email)

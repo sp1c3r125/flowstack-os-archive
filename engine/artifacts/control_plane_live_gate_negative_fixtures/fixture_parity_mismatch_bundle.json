@@ -1,4 +1,4 @@
-﻿{
+{
   "state": {
     "artifact_type": "control_plane_live_gate_state",
     "mutation_authority": "control_plane_only",

@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 // All runtime files (logs, reports, workflows, ledger) live under FLOWSTACK_HOME.

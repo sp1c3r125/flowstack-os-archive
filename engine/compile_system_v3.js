@@ -1,4 +1,4 @@
-﻿const { saveWorkflow } = require("./flowstack_tools.js");
+const { saveWorkflow } = require("./flowstack_tools.js");
 const { getContract } = require("./system_contracts.js");
 const { getRoutesTo } = require("./route_system_events.js");
 

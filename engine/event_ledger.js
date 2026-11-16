@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 const { FLOWSTACK_LOGS_DIR } = require("./flowstack_paths");
 

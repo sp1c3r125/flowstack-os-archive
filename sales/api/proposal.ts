@@ -1,4 +1,4 @@
-﻿/**
+/**
  * api/proposal.ts (Vercel Serverless Function)
  * Groq-only-in-Vercel: 2-pass strategy + 3-model fallback
  *

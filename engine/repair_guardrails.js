@@ -1,4 +1,4 @@
-﻿const ALLOWED_OPS = new Set([
+const ALLOWED_OPS = new Set([
   "replace_node_with_stub",
   "set_node_url",
   "set_workflow_active"

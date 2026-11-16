@@ -1,4 +1,4 @@
-﻿const CONTRACTS = {
+const CONTRACTS = {
   lead_intake_crm: {
     workflowName: "flowstack_lead_intake_crm",
     inputs: ["source", "businessType", "email", "phone"],

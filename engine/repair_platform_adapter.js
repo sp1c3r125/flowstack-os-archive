@@ -1,4 +1,4 @@
-﻿function adaptPlatformIssue({ workflow, platformObs, failure }) {
+function adaptPlatformIssue({ workflow, platformObs, failure }) {
   if (
     failure?.type === "WEBHOOK_NOT_REGISTERED" &&
     platformObs?.active &&

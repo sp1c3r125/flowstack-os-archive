@@ -1,4 +1,4 @@
-﻿const { readJson } = require("./control_plane_live_gate_read_helpers");
+const { readJson } = require("./control_plane_live_gate_read_helpers");
 
 function validateControlPlaneManualLivePostExecutionValidationResult(input) {
   const obj = typeof input === "string" ? readJson(input) : input;

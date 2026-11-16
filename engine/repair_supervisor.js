@@ -1,4 +1,4 @@
-﻿const {
+const {
   logAction,
   getWorkflow,
   updateWorkflow,

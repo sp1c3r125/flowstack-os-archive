@@ -1,4 +1,4 @@
-﻿function validateOutcomeV2({ beforeVersionObs, afterVersionObs, postTestResult, decision }) {
+function validateOutcomeV2({ beforeVersionObs, afterVersionObs, postTestResult, decision }) {
   if (postTestResult?.ok) {
     return { ok: true, status: "SUCCESS", reason: "webhook test succeeded" };
   }

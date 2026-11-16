@@ -1,4 +1,4 @@
-﻿const { getContract } = require("./system_contracts.js");
+const { getContract } = require("./system_contracts.js");
 
 function validateDispatchPayload(route, payload) {
   const toContract = getContract(route.to);

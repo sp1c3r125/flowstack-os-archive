@@ -1,4 +1,4 @@
-﻿const path = require("path");
+const path = require("path");
 const { readJson } = require("./control_plane_live_gate_read_helpers");
 const { validateControlPlaneLiveGateState } = require("./validate_control_plane_live_gate_state");
 const { validateControlPlaneLiveGateApprovalRecord } = require("./validate_control_plane_live_gate_approval_record");
