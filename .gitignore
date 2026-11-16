@@ -1,0 +1,19 @@
+# secrets and local config
+.env
+.env.*
+!.env.example
+
+# runtime data written by the engine (FLOWSTACK_HOME defaults to ./data)
+data/
+
+# dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+.vercel/
+
+# logs and OS/editor files
+*.log
+.DS_Store
+.idea/
+.vscode/

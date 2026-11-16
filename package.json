@@ -1,0 +1,10 @@
+{
+  "name": "flowstack-os-public",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Archived portfolio snapshot of Flowstack OS: sales app (sales/) and control-plane engine (engine/).",
+  "license": "MIT",
+  "scripts": {
+    "contracts": "node engine/run_all_negative_matrices.js"
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "schema_version": "flowstack.control_plane.manual_live_execution_receipt.v1",
+  "artifact_type": "control_plane_manual_live_execution_receipt",
+  "generated_at": "2026-03-31T00:00:00.000Z",
+  "mutation_authority": "control_plane_only",
+  "actual_live_execution_performed": true,
+  "receipt_status": "BOUNDARY_PREPARED_NOT_EXECUTED",
+  "source_boundary_path": "dummy.json",
+  "source_preflight_reference_path": "dummy_preflight.json"
+}

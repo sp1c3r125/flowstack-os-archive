@@ -1,0 +1,10 @@
+﻿{
+  "schema_version": "flowstack.control_plane.manual_live_execution_state_transition.v1",
+  "artifact_type": "control_plane_manual_live_execution_state_transition",
+  "generated_at": "2026-03-31T00:00:00.000Z",
+  "mutation_authority": "control_plane_only",
+  "previous_state": "READY_FOR_CONTROLLED_CONSUMPTION",
+  "next_state": "INVALID_NEXT_STATE",
+  "actual_live_execution_performed": false,
+  "source_consumption_path": "dummy_consumption.json"
+}

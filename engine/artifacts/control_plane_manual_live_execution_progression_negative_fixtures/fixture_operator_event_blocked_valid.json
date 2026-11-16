@@ -1,0 +1,11 @@
+﻿{
+  "schema_version": "flowstack.control_plane.manual_live_operator_execution_event.v1",
+  "artifact_type": "control_plane_manual_live_operator_execution_event",
+  "generated_at": "2026-03-31T00:00:00.000Z",
+  "mutation_authority": "control_plane_only",
+  "operator_event_status": "OPERATOR_EVENT_BLOCKED",
+  "actual_live_execution_performed": false,
+  "blocked_reasons": ["REQUEST_NOT_READY"],
+  "source_execution_request_path": "dummy_request.json",
+  "source_execution_consumption_path": "dummy_consumption.json"
+}

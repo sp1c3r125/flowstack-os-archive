@@ -1,0 +1,31 @@
+﻿{
+  "state": {
+    "artifact_type": "control_plane_live_gate_state",
+    "mutation_authority": "control_plane_only",
+    "eligibility_status": "LIVE_GATE_BLOCKED",
+    "eligible_for_manual_live_gate": false,
+    "blocked_reasons": ["SUPERVISOR_NOT_AUTHORIZED"]
+  },
+  "summary": {
+    "artifact_type": "control_plane_live_gate_state_summary",
+    "mutation_authority": "control_plane_only",
+    "eligibility_status": "ELIGIBLE_FOR_MANUAL_LIVE_GATE",
+    "blocked_reasons": [],
+    "approval_status": "pending_human_approval"
+  },
+  "operatorSummary": {
+    "artifact_type": "control_plane_live_gate_operator_summary",
+    "mutation_authority": "control_plane_only",
+    "eligibility_status": "ELIGIBLE_FOR_MANUAL_LIVE_GATE",
+    "blocked_reasons": [],
+    "approval_status": "pending_human_approval"
+  },
+  "surface": {
+    "artifact_type": "control_plane_live_gate_surface_artifact",
+    "mutation_authority": "control_plane_only",
+    "operator_summary": {
+      "artifact_type": "control_plane_live_gate_operator_summary",
+      "eligibility_status": "ELIGIBLE_FOR_MANUAL_LIVE_GATE"
+    }
+  }
+}

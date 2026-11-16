@@ -1,0 +1,11 @@
+﻿{
+  "schema_version": "flowstack.control_plane.manual_live_execution_request.v1",
+  "artifact_type": "control_plane_manual_live_execution_request",
+  "generated_at": "2026-03-31T00:00:00.000Z",
+  "mutation_authority": "control_plane_only",
+  "request_status": "REQUEST_BLOCKED",
+  "actual_live_execution_performed": false,
+  "blocked_reasons": ["BOUNDARY_NOT_READY"],
+  "source_boundary_path": "dummy_boundary.json",
+  "source_preflight_path": "dummy_preflight.json"
+}

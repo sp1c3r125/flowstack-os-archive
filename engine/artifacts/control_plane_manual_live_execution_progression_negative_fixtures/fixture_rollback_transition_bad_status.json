@@ -1,0 +1,9 @@
+﻿{
+  "schema_version": "flowstack.control_plane.manual_live_rollback_transition.v1",
+  "artifact_type": "control_plane_manual_live_rollback_transition",
+  "generated_at": "2026-03-31T00:00:00.000Z",
+  "mutation_authority": "control_plane_only",
+  "rollback_transition_status": "BAD_STATUS",
+  "actual_rollback_executed": false,
+  "source_rollback_readiness_path": "dummy_readiness.json"
+}

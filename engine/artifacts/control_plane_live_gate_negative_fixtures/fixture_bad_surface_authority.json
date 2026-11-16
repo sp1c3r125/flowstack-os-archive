@@ -1,0 +1,10 @@
+﻿{
+  "schema_version": "flowstack.control_plane.live_gate_surface_artifact.v1",
+  "artifact_type": "control_plane_live_gate_surface_artifact",
+  "generated_at": "2026-03-31T00:00:00.000Z",
+  "mutation_authority": "agent_layer",
+  "operator_summary": {
+    "artifact_type": "control_plane_live_gate_operator_summary",
+    "eligibility_status": "ELIGIBLE_FOR_MANUAL_LIVE_GATE"
+  }
+}

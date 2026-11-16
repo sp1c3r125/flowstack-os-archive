@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "control_plane_tenant_registry",
+  "authority": "control_plane_only",
+  "mutation_performed": false,
+  "live_mutation": false,
+  "tenants": [
+    {
+      "tenant_id": "sampletours_samplecity",
+      "display_name": "Sample Tours (Sample City)",
+      "active": true,
+      "projects": [
+        {
+          "project_id": "core",
+          "display_name": "Core Project",
+          "active": true,
+          "workspace_subpath": "tenants/sampletours_samplecity/projects/core"
+        }
+      ]
+    }
+  ]
+}
