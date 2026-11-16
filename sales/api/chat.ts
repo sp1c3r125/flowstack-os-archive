@@ -1,5 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { guardFlowstackChat, type ChatMessage } from '../services/groqService';
+import { serverConfig } from '../config';
 
 const MODEL = 'llama-3.3-70b-versatile';
 
@@ -8,7 +9,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const GROQ_API_KEY = process.env.GROQ_API_KEY;
+  const GROQ_API_KEY = serverConfig.groqApiKey;
   if (!GROQ_API_KEY) {
     return res.status(500).json({ error: 'GROQ_API_KEY is not configured' });
   }

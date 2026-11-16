@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { serverConfig } from '../config';
 
 export const config = {
   api: {
@@ -480,9 +481,9 @@ function buildSalesEmailHtml(payload: NormalizedPayload) {
 }
 
 async function sendSalesHandoffEmail(payload: NormalizedPayload) {
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const emailFrom = process.env.FLOWSTACK_SALES_EMAIL_FROM;
-  const emailTo = process.env.FLOWSTACK_SALES_EMAIL_TO;
+  const resendApiKey = serverConfig.resendApiKey;
+  const emailFrom = serverConfig.salesEmailFrom;
+  const emailTo = serverConfig.salesEmailTo;
 
   if (!resendApiKey || !emailFrom || !emailTo) {
     return {
@@ -534,8 +535,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const pat = process.env.FLOWSTACK_AIRTABLE_PAT;
-  const baseId = process.env.FLOWSTACK_AIRTABLE_BASE_ID;
+  const pat = serverConfig.airtablePat;
+  const baseId = serverConfig.airtableBaseId;
 
   if (!pat || !baseId) {
     return res.status(500).json({

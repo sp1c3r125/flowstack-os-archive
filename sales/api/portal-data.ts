@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { serverConfig } from "../config";
 
 export const config = {
   api: {
@@ -8,28 +9,13 @@ export const config = {
   },
 };
 
-function resolveTokenRegistry(): Record<string, string> {
-  try {
-    const singleToken = process.env.PORTAL_ACCESS_TOKEN;
-    if (singleToken) {
-      const tenantId = process.env.PORTAL_TENANT_ID || "default";
-      return { [singleToken]: tenantId };
-    }
-
-    const raw = process.env.PORTAL_TOKENS;
-    if (raw) return JSON.parse(raw);
-  } catch {}
-
-  return { "demo-client": "demo" };
-}
-
 function validateToken(token: string): string | null {
   if (!token || typeof token !== "string") return null;
 
   const clean = token.replace(/[^A-Za-z0-9_\-]/g, "").slice(0, 128);
   if (clean.length < 3) return null;
 
-  const registry = resolveTokenRegistry();
+  const registry = serverConfig.portalTokens();
   return registry[clean] || null;
 }
 
@@ -191,7 +177,7 @@ function computeStats(leads: any[]) {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Access-Control-Allow-Origin", process.env.PORTAL_ALLOWED_ORIGIN || "*");
+  res.setHeader("Access-Control-Allow-Origin", serverConfig.portalAllowedOrigin);
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Authorization, X-Portal-Token");
 
@@ -219,8 +205,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
   }
 
-  const pat = process.env.FLOWSTACK_AIRTABLE_PAT;
-  const baseId = process.env.FLOWSTACK_AIRTABLE_BASE_ID;
+  const pat = serverConfig.airtablePat;
+  const baseId = serverConfig.airtableBaseId;
 
   if (!pat || !baseId) {
     return res.status(200).json({

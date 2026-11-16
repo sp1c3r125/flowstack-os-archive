@@ -8,6 +8,8 @@
  * Security: All ingest fields sanitized before prompt insertion.
  */
 
+import { serverConfig } from "../config";
+
 type GroqError = {
   error?: { message?: string; type?: string; code?: string };
 };
@@ -120,7 +122,7 @@ async function callGroq(opts: {
   temperature: number;
   timeoutMs: number;
 }) {
-  const apiKey = process.env.GROQ_API_KEY;
+  const apiKey = serverConfig.groqApiKey;
   if (!apiKey) {
     return {
       ok: false,
