@@ -5,6 +5,9 @@
   "description": "Archived portfolio snapshot of Flowstack OS: sales app (sales/) and control-plane engine (engine/).",
   "license": "MIT",
   "scripts": {
+    "test:engine": "node --test \"engine/tests/*.test.js\"",
+    "test:sales": "npm --prefix sales test",
+    "test": "npm run test:engine && npm run test:sales",
     "contracts": "node engine/run_all_negative_matrices.js"
   }
 }
