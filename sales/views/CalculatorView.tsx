@@ -53,7 +53,7 @@ export const CalculatorView: React.FC<Props> = ({ data, onUpdate, onNext }) => {
     if (result.success) onNext();
     else {
       const fieldErrors: any = {};
-      result.error.errors.forEach(err => { if (err.path[0]) fieldErrors[err.path[0]] = err.message; });
+      result.error.issues.forEach(err => { if (err.path[0]) fieldErrors[err.path[0]] = err.message; });
       setErrors(fieldErrors);
     }
   };

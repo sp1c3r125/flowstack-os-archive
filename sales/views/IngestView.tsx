@@ -326,7 +326,7 @@ export const IngestView: React.FC<Props> = ({ data, onUpdate, onNext, onBack }) 
     const fieldErrors: Partial<Record<keyof IngestData, string>> = {};
 
     if (!result.success) {
-      result.error.errors.forEach(err => {
+      result.error.issues.forEach(err => {
         const key = err.path[0] as keyof IngestData | undefined;
         if (key) fieldErrors[key] = err.message;
       });

@@ -13,7 +13,7 @@ const labelClass =
 const fieldShellClass =
   'w-full rounded-lg border border-blue-300/16 bg-[linear-gradient(180deg,rgba(6,17,38,0.98)_0%,rgba(3,11,29,0.98)_100%)] px-4 py-3 text-slate-100 font-mono text-sm outline-none transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.02),0_0_0_1px_rgba(37,99,235,0.03)] focus:border-cyan-300/55 focus:shadow-[0_0_0_1px_rgba(34,211,238,0.35),0_0_24px_rgba(34,211,238,0.08)] disabled:cursor-not-allowed disabled:opacity-50';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   label: string;
   error?: string;
   prefix?: React.ReactNode;
@@ -54,7 +54,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'prefix'> {
   label: string;
   error?: string;
   prefix?: React.ReactNode;
