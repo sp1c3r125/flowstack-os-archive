@@ -2,8 +2,7 @@ const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...ar
 const { getRoutes } = require("./route_system_events.js");
 const { appendEvent } = require("./event_ledger.js");
 const { validateDispatchPayload } = require("./validate_dispatch_payloads.js");
-
-const N8N_URL = (process.env.N8N_URL || "http://localhost:5678").replace(/\/$/, "");
+const { N8N_URL } = require("./config");
 
 const WEBHOOK_PATHS = {
   lead_intake_crm: "flowstack-lead-intake",

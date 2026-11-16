@@ -1,9 +1,10 @@
 const { saveWorkflow, deployWorkflow, testWebhook, getWorkflow } = require("./flowstack_tools.js");
 const { runRepairSupervisor } = require("./repair_supervisor.js");
 const { validateSecondaryRuntime } = require("./repair_secondary_validator.js");
+const { FLOWSTACK_DEMO_MODE, ENABLE_LLM_REPAIR } = require("./config");
 
 function buildWorkflow() {
-  const demoMode = String(process.env.FLOWSTACK_DEMO_MODE || "1") === "1";
+  const demoMode = FLOWSTACK_DEMO_MODE;
 
   const crmNode = demoMode
     ? {
@@ -185,7 +186,7 @@ function buildWorkflow() {
     };
 
     console.log("=== BUILD ===");
-    console.log({ demoMode: String(process.env.FLOWSTACK_DEMO_MODE || "1") === "1" });
+    console.log({ demoMode: FLOWSTACK_DEMO_MODE });
     const savedPath = saveWorkflow(workflow.name, workflow);
     console.log({ savedPath });
 
@@ -203,7 +204,7 @@ function buildWorkflow() {
       webhookPath,
       testPayload,
       maxAttempts: 3,
-      allowLlm: String(process.env.ENABLE_LLM_REPAIR || "0") === "1"
+      allowLlm: ENABLE_LLM_REPAIR
     });
     console.log(JSON.stringify({ repairResult }, null, 2));
 

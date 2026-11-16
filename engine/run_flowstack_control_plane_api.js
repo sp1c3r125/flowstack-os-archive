@@ -5,6 +5,7 @@ const { spawn } = require("child_process");
 const { resolveFlowstackRuntimeRoots } = require("./flowstack_runtime_roots");
 const { ensureFlowstackWorkspaceBootstrap } = require("./ensure_flowstack_workspace_bootstrap");
 const { validateTenantTelemetryApiPreflight } = require("./validate_tenant_telemetry_api_preflight");
+const { CONTROL_PLANE_API_TOKEN, childProcessEnv } = require("./config");
 
 function parseArgs(argv) {
   const args = {};
@@ -36,17 +37,16 @@ function run() {
     workspaceRoot: roots.workspace_root,
   });
 
-  const apiToken = args.token || process.env.CONTROL_PLANE_API_TOKEN;
+  const apiToken = args.token || CONTROL_PLANE_API_TOKEN;
   if (!apiToken) {
     throw new Error("CONTROL_PLANE_API_TOKEN is required");
   }
 
-  const childEnv = {
-    ...process.env,
+  const childEnv = childProcessEnv({
     CONTROL_PLANE_API_TOKEN: apiToken,
     FLOWSTACK_WORKSPACE_ROOT: roots.workspace_root,
     FLOWSTACK_CODE_ROOT: roots.code_root,
-  };
+  });
 
   if (args.preflight !== "false") {
     const preflight = validateTenantTelemetryApiPreflight({

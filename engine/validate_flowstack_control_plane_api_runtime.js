@@ -1,6 +1,7 @@
 "use strict";
 
 const http = require("http");
+const { CONTROL_PLANE_API_TOKEN } = require("./config");
 
 function parseArgs(argv) {
   const args = {};
@@ -45,7 +46,7 @@ function getJson(url, headers = {}) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const port = String(args.port || "47911");
-  const token = args.token || process.env.CONTROL_PLANE_API_TOKEN;
+  const token = args.token || CONTROL_PLANE_API_TOKEN;
   const tenantId = args["tenant-id"] || "sampletours_samplecity";
   const projectId = args["project-id"] || "core";
 

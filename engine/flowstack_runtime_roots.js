@@ -1,17 +1,16 @@
 "use strict";
 
 const path = require("path");
-const { FLOWSTACK_HOME } = require("./flowstack_paths");
+const { FLOWSTACK_WORKSPACE_ROOT, CONTROL_PLANE_API_PORT } = require("./config");
 
 function resolveFlowstackRuntimeRoots(options = {}) {
   const codeRoot = path.resolve(options.codeRoot || options.repoRoot || process.cwd());
   const workspaceRoot = path.resolve(
     options.workspaceRoot ||
       options.flowstackWorkspaceRoot ||
-      process.env.FLOWSTACK_WORKSPACE_ROOT ||
-      FLOWSTACK_HOME
+      FLOWSTACK_WORKSPACE_ROOT
   );
-  const port = String(options.port || process.env.CONTROL_PLANE_API_PORT || "47911");
+  const port = String(options.port || CONTROL_PLANE_API_PORT);
 
   return {
     code_root: codeRoot,

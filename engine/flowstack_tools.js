@@ -6,6 +6,7 @@ const {
   AGENT_ACTIONS_LOG,
   ensureFlowstackDirs,
 } = require("./flowstack_paths");
+const { N8N_URL, N8N_API_KEY } = require("./config");
 
 ensureFlowstackDirs();
 const fs = require("fs");
@@ -15,8 +16,6 @@ const SAFE_ROOT = FLOWSTACK_ROOT;
 const WORKFLOWS_DIR = FLOWSTACK_WORKFLOWS_DIR;
 const LOG_DIR = FLOWSTACK_LOGS_DIR;
 const LOG_FILE = AGENT_ACTIONS_LOG;
-const N8N_URL = (process.env.N8N_URL || "http://localhost:5678").replace(/\/$/, "");
-const N8N_API_KEY = process.env.N8N_API_KEY || "";
 
 for (const dir of [SAFE_ROOT, WORKFLOWS_DIR, LOG_DIR]) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });

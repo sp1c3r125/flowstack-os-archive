@@ -1,8 +1,6 @@
 const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
 
-const LITELLM_URL = process.env.LITELLM_URL || "http://127.0.0.1:4000/chat/completions";
-const LITELLM_KEY = process.env.LITELLM_KEY || "";
-const LITELLM_MODEL = process.env.LITELLM_MODEL || "coding";
+const { LITELLM_URL, LITELLM_KEY, LITELLM_MODEL } = require("./config");
 
 function extractJson(text) {
   if (!text) return null;

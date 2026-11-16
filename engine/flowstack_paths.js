@@ -1,10 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+const { FLOWSTACK_HOME, FLOWSTACK_ROOT } = require("./config");
+
 // All runtime files (logs, reports, workflows, ledger) live under FLOWSTACK_HOME.
-// Default: ./data at the repo root (git-ignored).
-const FLOWSTACK_HOME = path.resolve(process.env.FLOWSTACK_HOME || path.join(__dirname, "..", "data"));
-const FLOWSTACK_ROOT = process.env.FLOWSTACK_ROOT || FLOWSTACK_HOME;
 const FLOWSTACK_LOGS_DIR = path.join(FLOWSTACK_ROOT, "logs");
 const FLOWSTACK_WORKFLOWS_DIR = path.join(FLOWSTACK_ROOT, "workflows");
 const FLOWSTACK_REPORTS_DIR = path.join(FLOWSTACK_ROOT, "reports");

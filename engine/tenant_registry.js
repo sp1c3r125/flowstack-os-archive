@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { FLOWSTACK_HOME } = require("./flowstack_paths");
+const { FLOWSTACK_WORKSPACE_ROOT } = require("./config");
 
 const DEFAULT_REGISTRY_FILE = "control_plane_tenant_registry.json";
 const EXPECTED_ARTIFACT_TYPE = "control_plane_tenant_registry";
@@ -15,7 +15,7 @@ function getRepoRoot(repoRoot) {
 }
 
 function getWorkspaceRoot() {
-  return path.resolve(process.env.FLOWSTACK_WORKSPACE_ROOT || FLOWSTACK_HOME);
+  return FLOWSTACK_WORKSPACE_ROOT;
 }
 
 function getRegistryPath(repoRoot, registryPath) {

@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { resolveFlowstackRuntimeRoots } = require("./flowstack_runtime_roots");
 const { loadTenantRegistry } = require("./tenant_registry");
+const { CONTROL_PLANE_API_TOKEN } = require("./config");
 
 function parseArgs(argv) {
   const args = {};
@@ -42,12 +43,12 @@ function validateTenantTelemetryApiPreflight(options = {}) {
   const dashboardDir = path.join(artifactsRoot, "tenant_execution_status_dashboards");
 
   return {
-    ok: Boolean(process.env.CONTROL_PLANE_API_TOKEN) && fs.existsSync(summaryDir) && fs.existsSync(dashboardDir),
+    ok: Boolean(CONTROL_PLANE_API_TOKEN) && fs.existsSync(summaryDir) && fs.existsSync(dashboardDir),
     artifact_type: "tenant_telemetry_api_preflight",
     workspace_root: roots.workspace_root,
     tenant_id: tenantId,
     project_id: projectId,
-    token_configured: Boolean(process.env.CONTROL_PLANE_API_TOKEN),
+    token_configured: Boolean(CONTROL_PLANE_API_TOKEN),
     summary_dir: summaryDir,
     summary_dir_exists: fs.existsSync(summaryDir),
     dashboard_dir: dashboardDir,
