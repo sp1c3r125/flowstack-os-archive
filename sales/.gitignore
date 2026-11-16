@@ -30,3 +30,6 @@ dist-ssr
 
 .vercel
 .env*.local
+
+# unit-test bundle output
+.test-build
