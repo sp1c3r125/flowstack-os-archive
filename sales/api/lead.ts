@@ -601,25 +601,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.error('Direct lead ingest error:', error);
 
     let errorMessage: string;
-    let errorDetails: any; // Allow details to be a more complex object if available
 
     if (error instanceof Error) {
       errorMessage = error.message;
-      errorDetails = error.stack || error; // Include stack for debugging, or the error object
     } else if (typeof error === 'object' && error !== null && 'message' in error) {
-      // Handle custom error objects that might not be instances of Error
-      errorMessage = (error as { message: string }).message;
-      errorDetails = error;
+      errorMessage = String((error as { message: unknown }).message);
     } else {
       errorMessage = 'An unknown server error occurred';
-      errorDetails = String(error);
     }
 
-    // Ensure the error response is always a well-formed JSON 500
+    // The full error (including the stack) is logged above and stays on the server.
     return res.status(500).json({
       error: 'Direct lead ingest failed',
-      details: errorMessage, // Use parsed message for 'details'
-      rawError: errorDetails // Add rawError for more context in logs/debugging
+      details: errorMessage,
     });
   }
 }
