@@ -116,7 +116,7 @@ export const CSRChatbot: React.FC = () => {
             </div>
           </div>
 
-          
+
 
           <div className="flex-1 space-y-4 overflow-y-auto bg-transparent px-4 py-4">
             {messages.map((message, index) => {

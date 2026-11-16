@@ -43,8 +43,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         },
         body: JSON.stringify({
           recipient: { id: senderId },
-          message: { 
-            text: "Thanks for reaching out! We'll review your inquiry and get back to you shortly." 
+          message: {
+            text: "Thanks for reaching out! We'll review your inquiry and get back to you shortly."
           }
         })
       });

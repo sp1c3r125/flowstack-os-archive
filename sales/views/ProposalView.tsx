@@ -107,7 +107,7 @@ export const ProposalView: React.FC<Props> = ({ appState, onReset }) => {
     const safeCompany = company.replace(/[\\/:*?"<>|]+/g, '').trim() || 'Lead';
     const safeNiche = niche.replace(/[\\/:*?"<>|]+/g, '').trim() || 'Unknown';
     const date = new Date().toISOString().slice(0, 10);
-    return `FlowStackOS Intake Report — ${safeCompany} (${safeNiche}) — ${date}.pdf`;
+    return `Flowstack OS Intake Report — ${safeCompany} (${safeNiche}) — ${date}.pdf`;
   }, [company, niche]);
 
   useEffect(() => {
@@ -646,7 +646,7 @@ const drawVerticalGradient = (
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(24);
     doc.setTextColor(255, 255, 255);
-    doc.text('FlowStackOS Intake Report', margin, 46);
+    doc.text('Flowstack OS Intake Report', margin, 46);
 
     doc.setCharSpace?.(0);
     doc.setFont('helvetica', 'normal');
@@ -832,7 +832,7 @@ const drawVerticalGradient = (
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9);
       doc.setTextColor(100, 116, 139);
-      doc.text('FlowStackOS Intake Report', margin, pageHeight - 14);
+      doc.text('Flowstack OS Intake Report', margin, pageHeight - 14);
       doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin - 45, pageHeight - 14);
     }
 

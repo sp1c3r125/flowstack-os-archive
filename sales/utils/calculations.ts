@@ -1,5 +1,5 @@
 /**
- * Business Logic for FlowStack OS Leakage Calculations
+ * Business Logic for Flowstack OS Leakage Calculations
  */
 
 export const REVENUE_COMMISSION_PERCENTAGE = 0.20; // 20% commission estimation
